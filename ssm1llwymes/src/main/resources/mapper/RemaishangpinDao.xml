@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.RemaishangpinDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.RemaishangpinEntity" id="remaishangpinMap">
+        <result property="shangpinbianhao" column="shangpinbianhao"/>
+        <result property="shangpinmingcheng" column="shangpinmingcheng"/>
+        <result property="fengmian" column="fengmian"/>
+        <result property="shangpinleibie" column="shangpinleibie"/>
+        <result property="pinpai" column="pinpai"/>
+        <result property="guige" column="guige"/>
+        <result property="shangpinxiangqing" column="shangpinxiangqing"/>
+        <result property="onelimittimes" column="onelimittimes"/>
+        <result property="alllimittimes" column="alllimittimes"/>
+        <result property="shangjiamingcheng" column="shangjiamingcheng"/>
+        <result property="lianxidianhua" column="lianxidianhua"/>
+        <result property="shangjiadizhi" column="shangjiadizhi"/>
+        <result property="clicktime" column="clicktime"/>
+        <result property="clicknum" column="clicknum"/>
+        <result property="discussnum" column="discussnum"/>
+        <result property="price" column="price"/>
+        <result property="storeupnum" column="storeupnum"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.RemaishangpinVO" >
+		SELECT * FROM remaishangpin  remaishangpin         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.RemaishangpinVO" >
+		SELECT  remaishangpin.* FROM remaishangpin  remaishangpin
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.RemaishangpinView" >
+
+		SELECT  remaishangpin.* FROM remaishangpin  remaishangpin 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.RemaishangpinView" >
+		SELECT * FROM remaishangpin  remaishangpin <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+	
+</mapper>
